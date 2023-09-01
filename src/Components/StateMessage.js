@@ -1,4 +1,5 @@
 import React , {Component} from "react";
+import PropTypes from 'prop-types';
 
 class Message extends Component{
 
@@ -22,6 +23,10 @@ class Message extends Component{
             </div>
         )
     }
+}
+
+Message.propTypes = {
+    name:PropTypes.number
 }
 
 export default Message;
