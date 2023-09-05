@@ -9,6 +9,7 @@ import Message from './Components/StateMessage';
 import UseStateWithObject from './Components/UseStateExample';
 import UseStateArray from './Components/useStateArrayExample';
 import ClickCounter from './Hooks/useEffectExample';
+import MouseExample from './Hooks/useEffectMouseExample';
 function App() {
   return (
     <div className="App">
@@ -31,7 +32,9 @@ function App() {
 
    {/* <UseStateArray/> */}
 
-   <ClickCounter/>
+   {/* <ClickCounter/>*/}
+
+   <MouseExample/>
     </div>
   );
 }
