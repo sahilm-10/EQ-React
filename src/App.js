@@ -8,6 +8,8 @@ import FullName from './Components/JsxExample';
 import Message from './Components/StateMessage';
 import UseStateWithObject from './Components/UseStateExample';
 import UseStateArray from './Components/useStateArrayExample';
+import CleanUpMouse from './Hooks/CleanUpToggle';
+import MouseCleanUpExample from './Hooks/useEffectCleanup';
 import ClickCounter from './Hooks/useEffectExample';
 import MouseExample from './Hooks/useEffectMouseExample';
 function App() {
@@ -34,7 +36,12 @@ function App() {
 
    {/* <ClickCounter/>*/}
 
-   <MouseExample/>
+   {/* <MouseExample/> */}
+
+   {/* <MouseCleanUpExample/> */}
+
+   <CleanUpMouse/>
+   
     </div>
   );
 }
