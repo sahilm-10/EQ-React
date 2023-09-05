@@ -1,6 +1,8 @@
 import './App.css';
+import Counter from './Components/ClassCounter';
 import WelcomeMessage from './Components/FirstClassComponent';
 import GreetMessage from './Components/FirstFunctionalComponent';
+import FuncCounter from './Components/FunctionCounter';
 import FullName from './Components/JsxExample';
 import Message from './Components/StateMessage';
 
@@ -15,7 +17,11 @@ function App() {
       <WelcomeMessage name="Bruce" age="22">This is a Class Component Passed Prop</WelcomeMessage>      
       <WelcomeMessage name="Bruce" age="22">This is a Class Component Passed Prop</WelcomeMessage> */}
     
-    <Message name="Sahil"/>
+    {/* <Message name="Sahil"/> */}
+
+    {/* <Counter/> */}
+
+    <FuncCounter/>
     </div>
   );
 }
