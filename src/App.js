@@ -6,7 +6,8 @@ import FuncCounter from './Components/FunctionCounter';
 import HookCounter from './Components/HookCounter';
 import FullName from './Components/JsxExample';
 import Message from './Components/StateMessage';
-
+import UseStateWithObject from './Components/UseStateExample';
+import UseStateArray from './Components/useStateArrayExample';
 function App() {
   return (
     <div className="App">
@@ -24,7 +25,10 @@ function App() {
 
     {/* <FuncCounter/> */}
 
-    <HookCounter/>
+    {/* <HookCounter/> */}
+   {/* <UseStateWithObject/> */}
+
+   <UseStateArray/>
     </div>
   );
 }
