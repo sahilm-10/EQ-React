@@ -8,6 +8,7 @@ import FullName from './Components/JsxExample';
 import Message from './Components/StateMessage';
 import UseStateWithObject from './Components/UseStateExample';
 import UseStateArray from './Components/useStateArrayExample';
+import ClickCounter from './Hooks/useEffectExample';
 function App() {
   return (
     <div className="App">
@@ -28,7 +29,9 @@ function App() {
     {/* <HookCounter/> */}
    {/* <UseStateWithObject/> */}
 
-   <UseStateArray/>
+   {/* <UseStateArray/> */}
+
+   <ClickCounter/>
     </div>
   );
 }
