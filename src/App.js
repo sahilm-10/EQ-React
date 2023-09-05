@@ -3,6 +3,7 @@ import Counter from './Components/ClassCounter';
 import WelcomeMessage from './Components/FirstClassComponent';
 import GreetMessage from './Components/FirstFunctionalComponent';
 import FuncCounter from './Components/FunctionCounter';
+import HookCounter from './Components/HookCounter';
 import FullName from './Components/JsxExample';
 import Message from './Components/StateMessage';
 
@@ -21,7 +22,9 @@ function App() {
 
     {/* <Counter/> */}
 
-    <FuncCounter/>
+    {/* <FuncCounter/> */}
+
+    <HookCounter/>
     </div>
   );
 }
