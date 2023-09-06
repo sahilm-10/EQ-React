@@ -10,6 +10,7 @@ import UseStateWithObject from './Components/UseStateExample';
 import UseStateArray from './Components/useStateArrayExample';
 import CleanUpMouse from './Hooks/CleanUpToggle';
 import FetchData from './Hooks/DataFetch';
+import GetById from './Hooks/DataFetchById';
 import MouseCleanUpExample from './Hooks/useEffectCleanup';
 import ClickCounter from './Hooks/useEffectExample';
 import MouseExample from './Hooks/useEffectMouseExample';
@@ -43,7 +44,9 @@ function App() {
 
    {/* <CleanUpMouse/> */}
 
-    <FetchData/>
+    {/* <FetchData/> */}
+
+    <GetById/>
     </div>
   );
 }
