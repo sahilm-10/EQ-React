@@ -9,6 +9,7 @@ import Message from './Components/StateMessage';
 import UseStateWithObject from './Components/UseStateExample';
 import UseStateArray from './Components/useStateArrayExample';
 import CleanUpMouse from './Hooks/CleanUpToggle';
+import CustomCounter from './Hooks/CustomHooks/CustomCounter';
 import UpdateDocTitle from './Hooks/CustomHooks/DocTitleUpdation';
 import FetchData from './Hooks/DataFetch';
 import GetById from './Hooks/DataFetchById';
@@ -58,7 +59,9 @@ function App() {
     {/* <ClickCounterMemo/> */}
     {/* <FocusInput/> */}
 
-    <UpdateDocTitle/>
+    {/* <UpdateDocTitle/> */}
+
+    <CustomCounter/>
     </div>
   );
 }
