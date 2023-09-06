@@ -11,6 +11,7 @@ import UseStateArray from './Components/useStateArrayExample';
 import CleanUpMouse from './Hooks/CleanUpToggle';
 import CustomCounter from './Hooks/CustomHooks/CustomCounter';
 import UpdateDocTitle from './Hooks/CustomHooks/DocTitleUpdation';
+import FormDetails from './Hooks/CustomHooks/FormDetails';
 import FetchData from './Hooks/DataFetch';
 import GetById from './Hooks/DataFetchById';
 import ComponentA from './Hooks/UseContext/ComponentA';
@@ -61,7 +62,9 @@ function App() {
 
     {/* <UpdateDocTitle/> */}
 
-    <CustomCounter/>
+    {/* <CustomCounter/> */}
+
+    <FormDetails/>
     </div>
   );
 }
