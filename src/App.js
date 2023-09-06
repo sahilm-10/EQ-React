@@ -11,6 +11,8 @@ import UseStateArray from './Components/useStateArrayExample';
 import CleanUpMouse from './Hooks/CleanUpToggle';
 import FetchData from './Hooks/DataFetch';
 import GetById from './Hooks/DataFetchById';
+import ComponentA from './Hooks/UseContext/ComponentA';
+import ComponentC from './Hooks/UseContext/ComponentC';
 import MouseCleanUpExample from './Hooks/useEffectCleanup';
 import ClickCounter from './Hooks/useEffectExample';
 import MouseExample from './Hooks/useEffectMouseExample';
@@ -46,7 +48,9 @@ function App() {
 
     {/* <FetchData/> */}
 
-    <GetById/>
+    {/* <GetById/> */}
+
+    <ComponentA/>
     </div>
   );
 }
