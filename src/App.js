@@ -14,6 +14,7 @@ import GetById from './Hooks/DataFetchById';
 import ComponentA from './Hooks/UseContext/ComponentA';
 import ComponentC from './Hooks/UseContext/ComponentC';
 import ClickCounterMemo from './Hooks/UseMemoHook.js/ClickCounter';
+import FocusInput from './Hooks/UseRef/FocusInput';
 import MouseCleanUpExample from './Hooks/useEffectCleanup';
 import ClickCounter from './Hooks/useEffectExample';
 import MouseExample from './Hooks/useEffectMouseExample';
@@ -53,7 +54,8 @@ function App() {
 
     {/* <ComponentA/> */}
     
-    <ClickCounterMemo/>
+    {/* <ClickCounterMemo/> */}
+    <FocusInput/>
     </div>
   );
 }

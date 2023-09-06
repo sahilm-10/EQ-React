@@ -15,7 +15,7 @@ function ClickCounterMemo(){
     const isEven = useMemo(() =>{
         let i = 0;
         while(i < 4000000000)
-        return clickone % 2 == 0;
+        return clickone % 2 === 0;
     },[clickone])
     return(
         <div>
