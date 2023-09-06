@@ -13,6 +13,7 @@ import FetchData from './Hooks/DataFetch';
 import GetById from './Hooks/DataFetchById';
 import ComponentA from './Hooks/UseContext/ComponentA';
 import ComponentC from './Hooks/UseContext/ComponentC';
+import ClickCounterMemo from './Hooks/UseMemoHook.js/ClickCounter';
 import MouseCleanUpExample from './Hooks/useEffectCleanup';
 import ClickCounter from './Hooks/useEffectExample';
 import MouseExample from './Hooks/useEffectMouseExample';
@@ -50,7 +51,9 @@ function App() {
 
     {/* <GetById/> */}
 
-    <ComponentA/>
+    {/* <ComponentA/> */}
+    
+    <ClickCounterMemo/>
     </div>
   );
 }
