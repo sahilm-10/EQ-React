@@ -27,6 +27,8 @@ import {Routes,Route} from 'react-router-dom';
 import HomePage from './React-Router/HomePage';
 import AboutPage from './React-Router/AboutPage';
 import Navbar from './React-Router/Navbar';
+import OrderSummary from './React-Router/OrderSummary';
+import NoMatchPage from './React-Router/NoMatchPage';
 function App() {
   return (
     <div className="App">
@@ -81,6 +83,8 @@ function App() {
       {/* Route takes two props - path(denoting url path), element-(Component to render) */}
       <Route path='/home' element={<HomePage/>}></Route>
       <Route path='/about' element={<AboutPage/>}></Route>
+      <Route path='/order-summary' element={<OrderSummary/>}></Route>
+      <Route path='*' element={<NoMatchPage/>}></Route>
     </Routes>
     </div>
   );
