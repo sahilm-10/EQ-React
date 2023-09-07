@@ -29,6 +29,9 @@ import AboutPage from './React-Router/AboutPage';
 import Navbar from './React-Router/Navbar';
 import OrderSummary from './React-Router/OrderSummary';
 import NoMatchPage from './React-Router/NoMatchPage';
+import ProductsPage from './React-Router/ProductsPage';
+import FeaturedProduct from './React-Router/FeaturedProduct';
+import NewProduct from './React-Router/NewProduct';
 function App() {
   return (
     <div className="App">
@@ -84,6 +87,10 @@ function App() {
       <Route path='/home' element={<HomePage/>}></Route>
       <Route path='/about' element={<AboutPage/>}></Route>
       <Route path='/order-summary' element={<OrderSummary/>}></Route>
+      <Route path='/products' element={<ProductsPage/>}>
+        <Route path='featured-page' element={<FeaturedProduct/>}></Route>
+        <Route path='new-page' element={<NewProduct/>}></Route>
+      </Route>
       <Route path='*' element={<NoMatchPage/>}></Route>
     </Routes>
     </div>
