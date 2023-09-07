@@ -23,6 +23,9 @@ import FocusInput from './Hooks/UseRef/FocusInput';
 import MouseCleanUpExample from './Hooks/useEffectCleanup';
 import ClickCounter from './Hooks/useEffectExample';
 import MouseExample from './Hooks/useEffectMouseExample';
+import {Routes,Route} from 'react-router-dom';
+import HomePage from './React-Router/HomePage';
+import AboutPage from './React-Router/AboutPage';
 function App() {
   return (
     <div className="App">
@@ -69,7 +72,14 @@ function App() {
     {/* <FormDetails/> */}
     {/* <FormDetailsClass/> */}
 
-    <SampleForm/>
+    {/* <SampleForm/> */}
+
+    {/* Routes below  */}
+    <Routes>
+      {/* Route takes two props - path(denoting url path), element-(Component to render) */}
+      <Route path='/home' element={<HomePage/>}></Route>
+      <Route path='/about' element={<AboutPage/>}></Route>
+    </Routes>
     </div>
   );
 }
