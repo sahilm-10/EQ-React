@@ -14,6 +14,7 @@ import UpdateDocTitle from './Hooks/CustomHooks/DocTitleUpdation';
 import FormDetails from './Hooks/CustomHooks/FormDetails';
 import FetchData from './Hooks/DataFetch';
 import GetById from './Hooks/DataFetchById';
+import FormDetailsClass from './Hooks/Forms/FormsDetails';
 import ComponentA from './Hooks/UseContext/ComponentA';
 import ComponentC from './Hooks/UseContext/ComponentC';
 import ClickCounterMemo from './Hooks/UseMemoHook.js/ClickCounter';
@@ -64,7 +65,8 @@ function App() {
 
     {/* <CustomCounter/> */}
 
-    <FormDetails/>
+    {/* <FormDetails/> */}
+    <FormDetailsClass/>
     </div>
   );
 }
