@@ -26,6 +26,7 @@ import MouseExample from './Hooks/useEffectMouseExample';
 import {Routes,Route} from 'react-router-dom';
 import HomePage from './React-Router/HomePage';
 import AboutPage from './React-Router/AboutPage';
+import Navbar from './React-Router/Navbar';
 function App() {
   return (
     <div className="App">
@@ -75,6 +76,7 @@ function App() {
     {/* <SampleForm/> */}
 
     {/* Routes below  */}
+    <Navbar/>
     <Routes>
       {/* Route takes two props - path(denoting url path), element-(Component to render) */}
       <Route path='/home' element={<HomePage/>}></Route>
