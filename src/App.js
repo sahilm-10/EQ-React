@@ -32,6 +32,8 @@ import NoMatchPage from './React-Router/NoMatchPage';
 import ProductsPage from './React-Router/ProductsPage';
 import FeaturedProduct from './React-Router/FeaturedProduct';
 import NewProduct from './React-Router/NewProduct';
+import Users from './React-Router/Users';
+import UserDetails from './React-Router/UserDetails';
 function App() {
   return (
     <div className="App">
@@ -91,6 +93,9 @@ function App() {
         <Route index element={<FeaturedProduct/>}/>
         <Route path='featured-page' element={<FeaturedProduct/>}></Route>
         <Route path='new-page' element={<NewProduct/>}></Route>
+      </Route>
+      <Route path='users' element={<Users/>}>
+        <Route path=':userId' element={<UserDetails/>}/>
       </Route>
       <Route path='*' element={<NoMatchPage/>}></Route>
     </Routes>
