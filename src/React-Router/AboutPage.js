@@ -1,5 +1,6 @@
 function AboutPage(){
     return(
+        // Check Network in console and throttle to slow3G for fallback changes!
         <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mauris turpis, pharetra id condimentum sit amet, euismod id ex. Duis pharetra quis felis a sollicitudin. Phasellus eget varius nisl. Mauris et metus a lectus fringilla eleifend nec id tellus. Etiam felis lectus, semper sed vulputate at, porta rhoncus leo. Phasellus eget sem et nunc hendrerit gravida. Etiam sapien sem, laoreet a hendrerit in, blandit vel justo. Phasellus molestie hendrerit bibendum. Fusce feugiat non ipsum in fermentum. Maecenas consectetur blandit ipsum, vel blandit tellus aliquet quis. Vestibulum sollicitudin justo quis orci ornare tristique. In blandit eros bibendum nibh scelerisque, eu malesuada tellus lobortis. Quisque eget augue eu justo dignissim convallis at a urna.
 
