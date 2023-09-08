@@ -25,7 +25,8 @@ import ClickCounter from './Hooks/useEffectExample';
 import MouseExample from './Hooks/useEffectMouseExample';
 import {Routes,Route} from 'react-router-dom';
 import HomePage from './React-Router/HomePage';
-import AboutPage from './React-Router/AboutPage';
+// import AboutPage from './React-Router/AboutPage';
+
 import Navbar from './React-Router/Navbar';
 import OrderSummary from './React-Router/OrderSummary';
 import NoMatchPage from './React-Router/NoMatchPage';
@@ -34,6 +35,8 @@ import FeaturedProduct from './React-Router/FeaturedProduct';
 import NewProduct from './React-Router/NewProduct';
 import Users from './React-Router/Users';
 import UserDetails from './React-Router/UserDetails';
+import React from 'react';
+const LazyAbout = React.lazy(()=> import('../src/React-Router/AboutPage'))
 function App() {
   return (
     <div className="App">
@@ -87,7 +90,12 @@ function App() {
     <Routes>
       {/* Route takes two props - path(denoting url path), element-(Component to render) */}
       <Route path='/home' element={<HomePage/>}></Route>
-      <Route path='/about' element={<AboutPage/>}></Route>
+      <Route path='/about' 
+      element={<React.Suspense fallback='Loading...'>
+                    <LazyAbout/>
+              </React.Suspense> }>
+      </Route>
+
       <Route path='/order-summary' element={<OrderSummary/>}></Route>
       <Route path='/products' element={<ProductsPage/>}>
         <Route index element={<FeaturedProduct/>}/>
