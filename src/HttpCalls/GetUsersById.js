@@ -15,7 +15,7 @@ function GetUserById(){
     console.log(posts);
     return(
         <div>
-            <h1>User Title</h1>
+            <h1>Post Title</h1>
             <input type="number" onChange={(e)=>setId(e.target.value)}/>
             <h2>
                 {posts.title}
