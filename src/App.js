@@ -36,6 +36,7 @@ import NewProduct from './React-Router/NewProduct';
 import Users from './React-Router/Users';
 import UserDetails from './React-Router/UserDetails';
 import React from 'react';
+import TestObject from './Components/TestObject';
 const LazyAbout = React.lazy(()=> import('../src/React-Router/AboutPage'))
 function App() {
   return (
@@ -87,26 +88,30 @@ function App() {
 
     {/* Routes below  */}
     <Navbar/>
-    <Routes>
+    {/* <Routes> */}
       {/* Route takes two props - path(denoting url path), element-(Component to render) */}
-      <Route path='/home' element={<HomePage/>}></Route>
-      <Route path='/about' 
-      element={<React.Suspense fallback='Loading...'>
-                    <LazyAbout/>
-              </React.Suspense> }>
-      </Route>
+      {/* <Route path='/home' element={<HomePage/>}></Route> */}
+      {/* <Route path='/about'  */}
+      {/* element={<React.Suspense fallback='Loading...'> */}
+                    {/* <LazyAbout/> */}
+              {/* </React.Suspense> }> */}
+      {/* </Route> */}
 
-      <Route path='/order-summary' element={<OrderSummary/>}></Route>
+      {/* <Route path='/order-summary' element={<OrderSummary/>}></Route>
       <Route path='/products' element={<ProductsPage/>}>
         <Route index element={<FeaturedProduct/>}/>
         <Route path='featured-page' element={<FeaturedProduct/>}></Route>
-        <Route path='new-page' element={<NewProduct/>}></Route>
-      </Route>
-      <Route path='users' element={<Users/>}>
-        <Route path=':userId' element={<UserDetails/>}/>
-      </Route>
-      <Route path='*' element={<NoMatchPage/>}></Route>
-    </Routes>
+        <Route path='new-page' element={<NewProduct/>}></Route> */}
+      {/* </Route> */}
+      {/* <Route path='users' element={<Users/>}> */}
+        {/* <Route path=':userId' element={<UserDetails/>}/> */}
+      {/* </Route> */}
+      {/* <Route path='*' element={<NoMatchPage/>}></Route> */}
+    {/* </Routes> */}
+
+    <TestObject/>
+    {/* <UseStateWithObject/> */}
+    
     </div>
   );
 }
