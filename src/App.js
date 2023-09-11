@@ -37,6 +37,8 @@ import UserDetails from './React-Router/UserDetails';
 import React from 'react';
 import TestObject from './Components/TestObject';
 import GetUsersByFetch from './HttpCalls/GetUsersByFetch';
+import GetUsersByAxios from './HttpCalls/GetUsersByAxios';
+import GetUserById from './HttpCalls/GetUsersById';
 const LazyAbout = React.lazy(()=> import('../src/React-Router/AboutPage'))
 function App() {
   return (
@@ -111,7 +113,9 @@ function App() {
 
     {/* <TestObject/> */}
     {/* <UseStateWithObject/> */}
-    <GetUsersByFetch/>
+    {/* <GetUsersByFetch/> */}
+    {/* <GetUsersByAxios/> */}
+    <GetUserById/>
     </div>
   );
 }
