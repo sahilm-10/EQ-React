@@ -41,6 +41,7 @@ import GetUsersByAxios from './HttpCalls/GetUsersByAxios';
 import GetUserById from './HttpCalls/GetUsersById';
 import LifecycleA from './ComponentLifeCycle/LifecycleA';
 import UpdateLifecycleA from './ComponentLifeCycle/UpdateLifecycleA';
+import SampleGrid from './AG-Grid/SampleGrid';
 const LazyAbout = React.lazy(()=> import('../src/React-Router/AboutPage'))
 function App() {
   return (
@@ -120,7 +121,8 @@ function App() {
     {/* <GetUserById/> */}
 
     {/* <LifecycleA/> */}
-    <UpdateLifecycleA/>
+    {/* <UpdateLifecycleA/> */}
+    <SampleGrid/>
     </div>
   );
 }
