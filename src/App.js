@@ -39,6 +39,7 @@ import TestObject from './Components/TestObject';
 import GetUsersByFetch from './HttpCalls/GetUsersByFetch';
 import GetUsersByAxios from './HttpCalls/GetUsersByAxios';
 import GetUserById from './HttpCalls/GetUsersById';
+import LifecycleA from './ComponentLifeCycle/LifecycleA';
 const LazyAbout = React.lazy(()=> import('../src/React-Router/AboutPage'))
 function App() {
   return (
@@ -115,7 +116,9 @@ function App() {
     {/* <UseStateWithObject/> */}
     {/* <GetUsersByFetch/> */}
     {/* <GetUsersByAxios/> */}
-    <GetUserById/>
+    {/* <GetUserById/> */}
+
+    <LifecycleA/>
     </div>
   );
 }
