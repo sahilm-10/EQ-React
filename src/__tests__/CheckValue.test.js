@@ -8,3 +8,8 @@ test('Check For Any Value', ()=>{
 test('This is my Team' , ()=>{
     expect('Team').not.toMatch(/I/)
 })
+
+test('TestName in UserNames', ()=>{
+    const userNames = ['Sahil','Test1','Test2','TestName']
+    expect(userNames).toContain('TestName')
+})
