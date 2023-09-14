@@ -43,6 +43,7 @@ import LifecycleA from './ComponentLifeCycle/LifecycleA';
 import UpdateLifecycleA from './ComponentLifeCycle/UpdateLifecycleA';
 import SampleGrid from './AG-Grid/SampleGrid';
 import AGGrid from './AG-Grid/AGGrid';
+import GridExample from './AG-Grid/GridExample';
 const LazyAbout = React.lazy(()=> import('../src/React-Router/AboutPage'))
 function App() {
   return (
@@ -125,7 +126,9 @@ function App() {
     {/* <UpdateLifecycleA/> */}
     {/* <SampleGrid/> */}
 
-    <AGGrid/>
+    {/* <AGGrid/> */}
+
+    <GridExample/>
     </div>
   );
 }
