@@ -18,12 +18,13 @@ const TableGridCell = () => {
     ];
     
     const columnDefs = [
-        { field: 'make' },
-        { field: 'model', tooltipField:'make' },
-        { field: 'price' , 
-        cellStyle:(params)=>  // for class use cellClass and write css in css file using className(.)
-        (params.value < 40000 ? {backgroundColor:'red'}:{backgroundColor:'green'}) },
-        
+        { field: 'postId' },
+        { field: 'id', tooltipField:'name', cellStyle:(params)=>  // for class use cellClass and write css in css file using className(.)
+        (params.value < 200 ? {backgroundColor:'red'}:{backgroundColor:'green'}) },
+        { field: 'name' , 
+         },
+        {field:'email'},
+        {field:'body'},
         {headerName:'Action' , 
         cellRenderer:(params)=><div>
       <button onClick={()=>checkDetails(params)}>Click me</button>
@@ -33,15 +34,22 @@ const TableGridCell = () => {
     const defaultColDefs = {
         flex:1
     }
-
+    const gridReady =(params)=>{
+        console.log("GridReady Function");
+        fetch('https://jsonplaceholder.typicode.com/comments')
+            .then(res => res.json())
+            .then(res => 
+                params.api.applyTransaction({add:res}))
+    }
     return (
-        <div className="ag-theme-alpine" style={{height: 400, width: '100%'}}>
+        <div className="ag-theme-alpine" style={{height: 500, width: '100%'}}>
             <AgGridReact
-                rowData={rowData}
+                // rowData={rowData}
                 columnDefs={columnDefs}
                 defaultColDef={defaultColDefs}
                 enableBrowserTooltips={true}
-                tooltipShowDelay={{tooltipShowDelay:2}}>
+                tooltipShowDelay={{tooltipShowDelay:2}}
+                onGridReady={gridReady}>
             </AgGridReact>
         </div>
     );
