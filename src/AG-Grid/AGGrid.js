@@ -12,9 +12,16 @@ const AGGrid = () => {
         {name:'D' ,age:23}
         
     ]
+    const checkDetails = (field) =>{
+        console.log(field);
+    }
     const columnDefs = [
         {headerName:'Name' , field:'name',checkboxSelection:true },
-        {headerName:'Age(Years)' , field:'age'}
+        {headerName:'Age(Years)' , field:'age'},
+        {headerName:'Action' , field:"age", 
+        cellRendererFramework:(field)=>
+            <button onClick={()=>checkDetails(field)}>Click Me For Details</button>
+        }
     ]
     const defaultColDefs = {
         sortable:true , filter:true, editable:true, floatingFilter:true , flex:1
