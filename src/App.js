@@ -126,9 +126,9 @@ function App() {
     {/* <UpdateLifecycleA/> */}
     {/* <SampleGrid/> */}
 
-    {/* <AGGrid/> */}
+    <AGGrid/>
 
-    <GridExample/>
+    {/* <GridExample/> */}
     </div>
   );
 }

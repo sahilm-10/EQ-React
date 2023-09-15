@@ -1,28 +1,30 @@
 import React, { useState } from 'react';
-import { createRoot } from 'react-dom/client';
 import { AgGridReact } from 'ag-grid-react';
 
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 
 const AGGrid = () => {
-    const [rowData] = useState([
-        {make: "Toyota", model: "Celica", price: 35000},
-        {make: "Ford", model: "Mondeo", price: 32000},
-        {make: "Porsche", model: "Boxster", price: 72000}
-    ]);
-    
-    const [columnDefs] = useState([
-        { field: 'make' },
-        { field: 'model' },
-        { field: 'price' }
-    ]);
-
+    const rowData = [
+        {name:'A' ,age:20},
+        {name:'B' ,age:21},
+        {name:'C' ,age:22},
+        {name:'D' ,age:23}
+        
+    ]
+    const columnDefs = [
+        {headerName:'Name' , field:'name',checkboxSelection:true},
+        {headerName:'Age(Years)' , field:'age'}
+    ]
+    const defaultColDefs = {
+        sortable:true , filter:true, editable:true
+    }
     return (
         <div className="ag-theme-alpine" style={{height: 500, width: 700}}>
             <AgGridReact
                 rowData={rowData}
-                columnDefs={columnDefs}>
+                columnDefs={columnDefs}
+                defaultColDef={defaultColDefs}>
             </AgGridReact>
         </div>
     );
