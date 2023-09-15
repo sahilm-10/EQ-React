@@ -19,9 +19,9 @@ const TableGridCell = () => {
     
     const columnDefs = [
         { field: 'make' },
-        { field: 'model' },
+        { field: 'model', tooltipField:'make' },
         { field: 'price' , 
-        cellStyle:(params)=>
+        cellStyle:(params)=>  // for class use cellClass and write css in css file using className(.)
         (params.value < 40000 ? {backgroundColor:'red'}:{backgroundColor:'green'}) },
         
         {headerName:'Action' , 
@@ -39,7 +39,9 @@ const TableGridCell = () => {
             <AgGridReact
                 rowData={rowData}
                 columnDefs={columnDefs}
-                defaultColDef={defaultColDefs}>
+                defaultColDef={defaultColDefs}
+                enableBrowserTooltips={true}
+                tooltipShowDelay={{tooltipShowDelay:2}}>
             </AgGridReact>
         </div>
     );
