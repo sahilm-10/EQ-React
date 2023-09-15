@@ -20,7 +20,10 @@ const TableGridCell = () => {
     const columnDefs = [
         { field: 'make' },
         { field: 'model' },
-        { field: 'price' },
+        { field: 'price' , 
+        cellStyle:(params)=>
+        (params.value < 40000 ? {backgroundColor:'red'}:{backgroundColor:'green'}) },
+        
         {headerName:'Action' , 
         cellRenderer:(params)=><div>
       <button onClick={()=>checkDetails(params)}>Click me</button>
