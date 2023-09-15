@@ -13,14 +13,14 @@ const AGGrid = () => {
         
     ]
     const columnDefs = [
-        {headerName:'Name' , field:'name',checkboxSelection:true},
+        {headerName:'Name' , field:'name',checkboxSelection:true },
         {headerName:'Age(Years)' , field:'age'}
     ]
     const defaultColDefs = {
-        sortable:true , filter:true, editable:true
+        sortable:true , filter:true, editable:true, floatingFilter:true , flex:1
     }
     return (
-        <div className="ag-theme-alpine" style={{height: 500, width: 700}}>
+        <div className="ag-theme-alpine" style={{height: 500, width: '100%'}}>
             <AgGridReact
                 rowData={rowData}
                 columnDefs={columnDefs}
