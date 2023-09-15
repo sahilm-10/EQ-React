@@ -18,9 +18,9 @@ const TableGridCell = () => {
     ];
     
     const columnDefs = [
-        { field: 'postId' },
+        { field: 'postId', checkboxSelection:true ,headerCheckboxSelection:true},
         { field: 'id', tooltipField:'name', cellStyle:(params)=>  // for class use cellClass and write css in css file using className(.)
-        (params.value < 200 ? {backgroundColor:'red'}:{backgroundColor:'green'}) },
+        (params.value < 200 ? {backgroundColor:'red'}:{backgroundColor:'green'}),  },
         { field: 'name' , 
          },
         {field:'email'},
@@ -41,6 +41,10 @@ const TableGridCell = () => {
             .then(res => 
                 params.api.applyTransaction({add:res}))
     }
+    const rowSelection = 'single';
+    const onSelectionChanged = (event) =>{
+        console.log(event.api.getSelectedRows());
+    }
     return (
         <div className="ag-theme-alpine" style={{height: 500, width: '100%'}}>
             <AgGridReact
@@ -49,7 +53,11 @@ const TableGridCell = () => {
                 defaultColDef={defaultColDefs}
                 enableBrowserTooltips={true}
                 tooltipShowDelay={{tooltipShowDelay:2}}
-                onGridReady={gridReady}>
+                onGridReady={gridReady}
+                rowSelection={rowSelection}
+                onSelectionChanged={onSelectionChanged}
+                // rowMultiSelectWithClick={true}
+                >
             </AgGridReact>
         </div>
     );
