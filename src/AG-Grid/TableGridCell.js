@@ -9,7 +9,7 @@ const TableGridCell = () => {
     const[gridApi,setGridApi] = useState();
     const checkDetails = (params) =>{
         console.log(params);
-        alert( `Make:${params.data.make} & Price:${params.data.price} for Model:${params.data.model}`)
+        alert( `Name:${params.data.email} & Mail:${params.data.email} for PostID:${params.data.postId}`)
     }
     const rowData =[
         {make: "Toyota", model: "Celica", price: 35000},
