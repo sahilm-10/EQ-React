@@ -1,0 +1,10 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+.counter-btn{
+//   font: 100% $font-stack;
+  border: $primary-color;
+}
+h1{
+    color:$primary-color;
+}
