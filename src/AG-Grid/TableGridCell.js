@@ -6,7 +6,7 @@ import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 
 const TableGridCell = () => {
-    const[gridApi,setGridApi] = useState();
+    const[gridApi,setGridApi] = useState(null);
     const checkDetails = (params) =>{
         console.log(params);
         alert( `Name:${params.data.email} & Mail:${params.data.email} for PostID:${params.data.postId}`)
@@ -51,6 +51,10 @@ const TableGridCell = () => {
     const onPaginationChange = (pageSize) =>{
         gridApi.api.paginationSetPageSize(pageSize)
     }
+    const onFilterTextChange = (e) =>{
+        // console.log(e.target.value);
+        gridApi.setQuickFilter(e.target.value);
+    }
     return (
         <div className="ag-theme-alpine" style={{height: 500, width: '100%'}}>
             <select onChange={(e)=>onPaginationChange(e.target.value)}>
@@ -58,6 +62,9 @@ const TableGridCell = () => {
                 <option value="25">25</option>
                 <option value="50">50</option>
             </select>
+            <div>
+                <input type='search' onChange={onFilterTextChange} placeholder='Search here' />
+            </div>
             <AgGridReact
                 // rowData={rowData}
                 columnDefs={columnDefs}
