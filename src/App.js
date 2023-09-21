@@ -134,12 +134,12 @@ function App() {
     {/* <AGGrid/> */}
         
     {/* <GridExample/> */}
-    {/* <TableGridCell/> */}
+    <TableGridCell/>
     {/* <CounterButtons/> */}
     {/* <Counters/> */}
 
     {/* <DateRange/> */}
-    <RefForm/>
+    {/* <RefForm/> */}
     </div>
   );
 }
