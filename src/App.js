@@ -49,6 +49,7 @@ import CounterButtons from './React-Redux/app/CounterButtons';
 import Counters from './ReduxToolkit/Counters';
 import DateRange from './AG-Grid/DateRange';
 import RefForm from './Hooks/UseRef/RefForm';
+import CustomFilter from './AG-Grid/CustomFilter';
 const LazyAbout = React.lazy(()=> import('../src/React-Router/AboutPage'))
 function App() {
   return (
@@ -134,12 +135,14 @@ function App() {
     {/* <AGGrid/> */}
         
     {/* <GridExample/> */}
-    <TableGridCell/>
+    {/* <TableGridCell/> */}
+    {/* <GetById/> */}
     {/* <CounterButtons/> */}
     {/* <Counters/> */}
 
     {/* <DateRange/> */}
     {/* <RefForm/> */}
+    <CustomFilter/>
     </div>
   );
 }
