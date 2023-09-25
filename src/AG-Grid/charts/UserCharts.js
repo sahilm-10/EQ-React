@@ -23,7 +23,7 @@ const UserCharts = () => {
 
     const defaultColDefs = {
         flex: 1,
-        filter: true,
+        filter: 'agSetColumnFilter',
         editable: true,
         sortable: true,
         floatingFilter: true,
@@ -84,21 +84,22 @@ const UserCharts = () => {
         var params1 = {
           cellRange: {
             rowStartIndex: 0,
-            rowEndIndex: 10,
+            rowEndIndex: 100,
             columns: ['country', 'gold', 'silver'],
           },
-          chartType: 'groupedBar',
+          chartType: 'groupedColumn',
           chartContainer: eContainer1,
         };
         event.api.createRangeChart(params1);
         var eContainer2 = document.querySelector('#chart2');
         var params2 = {
+          chartType:'pie',
           cellRange: {
             rowStartIndex: 0,
-            rowEndIndex: 40,
-            columns: ['country', 'bronze'],
+            rowEndIndex: 10,
+            columns: ['country', 'gold'],
           },
-          chartType: 'pie',
+          aggFunc: 'sum',
           chartContainer: eContainer2,
           aggFunc: 'sum',
           chartThemeOverrides: {
@@ -115,9 +116,10 @@ const UserCharts = () => {
             },
           },
         };
-        event.api.createRangeChart(params2);
+        event.api.createCrossFilterChart(params2);
         
       }, []);
+      
     const gridReady = (params) => {
 
        gridRef.current = params;
@@ -127,6 +129,20 @@ const UserCharts = () => {
             .catch(error => console.log(error));
     };
 
+    const chartToolPanelsDefs = useMemo(() => {
+        return {
+          defaultToolPanel: 'settings',
+          dataPanel: {
+            groups: [
+              { type: 'seriesChartType', isOpen: true },
+              { type: 'series', isOpen: false },
+            ],
+          },
+        };
+      }, []);
+      const getChartToolbarItems = useCallback(() => {
+        return ['chartDownload'];
+      }, []);
     return (
         <div className="ag-theme-alpine" style={{ height: 800, width: '100%' }}>
             <div>
@@ -137,7 +153,7 @@ const UserCharts = () => {
           id="chart1"
           style={{ flex: '1 1 auto', overflow: 'hidden', height: '30%' }}
         ></div>
-        <h2 style={{textAlign:'center'}}>Athletes with Bronze Medals</h2>
+        <h2 style={{textAlign:'center'}}>Countries with Gold Medals</h2>
         <div
           style={{
             display: 'flex',
@@ -163,7 +179,9 @@ const UserCharts = () => {
                 enableRangeSelection={true}
                 enableCharts={true}
                 popupParent={popupParent}
+                chartToolPanelsDef={chartToolPanelsDefs}
                 onFirstDataRendered={onFirstDataRendered}
+               getChartToolbarItems={getChartToolbarItems}
             >
             </AgGridReact>
            
