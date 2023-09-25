@@ -50,6 +50,7 @@ import Counters from './ReduxToolkit/Counters';
 import DateRange from './AG-Grid/DateRange';
 import RefForm from './Hooks/UseRef/RefForm';
 import CustomFilter from './AG-Grid/CustomFilter';
+import UserCharts from './AG-Grid/charts/UserCharts';
 const LazyAbout = React.lazy(()=> import('../src/React-Router/AboutPage'))
 function App() {
   return (
@@ -142,7 +143,11 @@ function App() {
 
     {/* <DateRange/> */}
     {/* <RefForm/> */}
-    <CustomFilter/>
+    {/* <CustomFilter/> */}
+
+    {/* charts */}
+
+    <UserCharts/>
     </div>
   );
 }

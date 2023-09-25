@@ -21,6 +21,8 @@ const TableGridCell = () => {
     const [rowData, setRowData] = useState([]);
     // const[filteredrowdata,setFilteredrowdata] = useState([]);
     const gridApiRef = useRef(null);
+    const enalbleCharts = true;
+    const enableRangeSelection = true;
     const columnDefs = [
         { field: 'postId', checkboxSelection: true, headerCheckboxSelection: true },
         {
@@ -96,6 +98,8 @@ const TableGridCell = () => {
     </Box>
 
             <AgGridReact
+            enableCharts={enalbleCharts}
+            enableRangeSelection={enableRangeSelection}
                 rowData={rowData}
                 columnDefs={columnDefs}
                 defaultColDef={defaultColDefs}
