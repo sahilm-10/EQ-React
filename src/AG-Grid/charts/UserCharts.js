@@ -6,6 +6,8 @@ import axios from 'axios';
 import 'ag-grid-enterprise';
 
 const UserCharts = () => {
+    let chartModel;
+    let currentChartRef;
     const gridRef = useRef();
     const[rowData,setRowData] = useState([]);
     const columnDefs = [
@@ -78,7 +80,9 @@ const UserCharts = () => {
     //     gridRef.current.api.createRangeChart(params);
     //   }, []);
 
-
+    const chartThemes = useMemo(() => {
+      return ['ag-material-dark', 'ag-vivid-dark', 'ag-solar'];
+    }, []);
     const onFirstDataRendered = useCallback((event) => {
         var eContainer1 = document.querySelector('#chart1');
         var params1 = {
@@ -90,7 +94,7 @@ const UserCharts = () => {
           chartType: 'groupedColumn',
           chartContainer: eContainer1,
         };
-        event.api.createRangeChart(params1);
+        currentChartRef = event.api.createRangeChart(params1);
         var eContainer2 = document.querySelector('#chart2');
         var params2 = {
           chartType:'pie',
@@ -116,10 +120,26 @@ const UserCharts = () => {
             },
           },
         };
-        event.api.createCrossFilterChart(params2);
+        currentChartRef = event.api.createCrossFilterChart(params2);
         
       }, []);
-      
+
+      const saveChart = useCallback(()=>{
+        const chartModels = gridRef.current.api.getChartModels() || [];
+        if(chartModels.length > 0 ){
+          chartModel = chartModels[1];
+        } 
+      },[]);
+      const deleteChart = useCallback(()=>{
+        if(currentChartRef){
+          currentChartRef.destroyChart();
+          currentChartRef = undefined;
+        }
+      },[currentChartRef])
+      const restoreChart = useCallback(()=>{
+        if(!chartModel) return;
+        currentChartRef = gridRef.current.api.restoreChart(chartModel);
+      },[chartModel])
     const gridReady = (params) => {
 
        gridRef.current = params;
@@ -144,7 +164,7 @@ const UserCharts = () => {
         return ['chartDownload'];
       }, []);
     return (
-        <div className="ag-theme-alpine" style={{ height: 800, width: '100%' }}>
+        <div className="ag-theme-alpine-dark" style={{ margin:0,padding:0,height: 800, width: '100%' }}>
             <div>
             {/* <button onClick={onChart1}>Top 5 Medal Winners</button>
           <button onClick={onChart2}>Bronze Medals by Country</button> */}
@@ -153,7 +173,7 @@ const UserCharts = () => {
           id="chart1"
           style={{ flex: '1 1 auto', overflow: 'hidden', height: '30%' }}
         ></div>
-        <h2 style={{textAlign:'center'}}>Countries with Gold Medals</h2>
+        {/* <h2 style={{textAlign:'center'}}>Countries with Gold Medals</h2> */}
         <div
           style={{
             display: 'flex',
@@ -168,6 +188,11 @@ const UserCharts = () => {
           ></div>
           
           </div>
+
+          <button onClick={saveChart}>Save Chart</button>
+          <button onClick={deleteChart}>Delete Chart</button>
+          <button onClick={restoreChart}>Restore Chart</button>
+            
             <AgGridReact
             // enableCharts={enalbleCharts}
                 rowData={rowData}
@@ -182,6 +207,7 @@ const UserCharts = () => {
                 chartToolPanelsDef={chartToolPanelsDefs}
                 onFirstDataRendered={onFirstDataRendered}
                getChartToolbarItems={getChartToolbarItems}
+               chartThemes={chartThemes}
             >
             </AgGridReact>
            
